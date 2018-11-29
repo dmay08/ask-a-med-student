@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './WelcomePage.css';
 
 const Welcome = (props) => (
@@ -7,11 +8,10 @@ const Welcome = (props) => (
         <p>Ask a Med Student</p>
         <a href="">How it works</a>
         <br></br>
-        <a href="">Sign Up</a>
-        <br></br>
-        <a href="">Log In</a>
-        <br></br>
+        <Link to='/login' className='NavBar-link'>Log In</Link>
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+        <Link to='/signup' className='NavBar-link'>Sign Up</Link>
     </div>
-)
+);
 
 export default Welcome;
