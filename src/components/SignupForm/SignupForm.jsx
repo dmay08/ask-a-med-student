@@ -25,7 +25,9 @@ class SignupForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    userService.signup(this.state)
+    var signupData = {...this.state}; // *** 1st = make a COPY of 'state'
+    signupData.isApplicant = signupData.isApplicant === 'true'; // *** 2nd = if isApplicant is STRING 'true' (which is how react handles it) > this makes it an ACTUAL True boolean!
+    userService.signup(signupData) // replaced (this.state) > (signupData) since we copied it
       // successfully signed up - show 'home page'
       .then(() => {
         this.props.handleSignupOrLogin(); // ADDED THIS!!!!! for #7
@@ -36,7 +38,7 @@ class SignupForm extends Component {
   }
 
   isFormInvalid() {
-    return !(this.state.name && this.state.email && this.state.password === this.state.passwordConf && (this.state.isApplicant === true || this.state.isApplicant === false));
+    return !(this.state.name && this.state.email && this.state.password === this.state.passwordConf && (this.state.isApplicant === 'true' || this.state.isApplicant === 'false'));
   }
 
   render() {

@@ -10,7 +10,7 @@ var userSchema = new mongoose.Schema({
   name: String,
   email: {type: String, required: true, lowercase: true, unique: true},
   password: String,
-  isApplicant: {type: Boolean, default: true} // lets me simply type 'isApplicant' for ternaries
+  isApplicant: {type: String, default: true} // lets me simply type 'isApplicant' for ternaries
 }, {
   timestamps: true
 });
