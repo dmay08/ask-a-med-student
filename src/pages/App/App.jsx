@@ -3,19 +3,24 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Redirect
+  // Redirect
 } from 'react-router-dom';
 import './App.css';
 import WelcomePage from '../WelcomePage/WelcomePage';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
-import HomePage from '../HomePage/HomePage';
+import AppHomePage from '../MedSchoolApplicant/HomePage/AppHomePage';
+import StudHomePage from '../MedSchoolStudent/HomePage/StudHomePage';
 
 import userService from '../../utils/userService';
 
 class App extends Component {
-
-
+  constructor(props) {
+    super(props);
+    this.state = {
+      user: null
+    }
+  }
 
   // // 6) Implement Log Out functionality ('onClick' w/ this func = 'NavBar.jsx' page)
   // handleLogout = () => { // go to 'userService' & write 'logout' func
@@ -43,9 +48,15 @@ class App extends Component {
             <Route exact path='/' render={() =>
               <WelcomePage />
             } />
-            <Route exact path='/home' render={() =>
-              <HomePage />
-            } />
+            <Route exact path='/home' render={() =>  
+              this.state.user && this.state.user.isApplicant // if there's a user AND isApplicant = true
+                // componentDidMount = async > runs AFTER this ternary, so get 'cannot read prop user of null'
+                  // checking 'this.state.user' BEFORE '.isApplicant' fixes this problem
+              ? 
+              <AppHomePage /> 
+              : 
+              <StudHomePage /> 
+            }/>
             <Route exact path='/signup' render={({ history }) => 
               <SignupPage
                 history={history}
