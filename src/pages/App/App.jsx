@@ -61,15 +61,29 @@ class App extends Component {
   }
 
   render() {
+    let page;
+
+    if (this.state.user && this.state.user.isApplicant) {
+      page = <AppHomePage
+      user={this.state.user}
+      // history={props.history}
+      questionList={this.state.questionList} // ????????????
+    /> 
+    } else if (this.state.user && !this.state.user.isApplicant) {
+      page = <StudHomePage 
+      questionList={this.state.questionList} // ????????????
+    /> 
+    } else if (!this.state.user) {
+      page = <WelcomePage />
+    }
+
     return (
       <div className="App">
       <Router>
         <Switch>
             <Route exact path='/' render={() =>
-              <WelcomePage />
+              page
             } />
-
-
             <Route exact path='/signup' render={({ history }) => 
               <SignupPage
                 history={history}
@@ -88,23 +102,7 @@ class App extends Component {
               <>
               <NavBar user={this.state.user} />
 
-              {/* <QuestionList /> */}
-
-              <Route exact path='/home' render={(props) =>  
-                this.state.user && this.state.user.isApplicant // if there's a user AND isApplicant = true
-                  // componentDidMount = async > runs AFTER this ternary, so get 'cannot read prop user of null'
-                    // checking 'this.state.user' BEFORE '.isApplicant' fixes this problem
-                ? 
-                <AppHomePage
-                  user={this.state.user}
-                  history={props.history}
-                  questionList={this.state.questionList} // ????????????
-                /> 
-                : 
-                <StudHomePage 
-                  questionList={this.state.questionList} // ????????????
-                /> 
-              }/>
+              {/* <Route exact path='/home' render={() =>  }/> */}
               </>
             :
             null
