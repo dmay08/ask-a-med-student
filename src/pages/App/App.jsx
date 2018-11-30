@@ -14,13 +14,14 @@ import StudHomePage from '../MedSchoolStudent/HomePage/StudHomePage';
 import NavBar from '../../components/NavBar/NavBar';
 
 import userService from '../../utils/userService';
+import questionService from '../../utils/questionService';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       user: null,
-      questions: []
+      questionList: []
     }
   }
 
@@ -35,10 +36,27 @@ class App extends Component {
     this.setState({ user: userService.getUser() });
   }
 
+  // is this correct ?????? i don't want 'details'.... 
+  handleClick = (id) => {
+    fetch(`/api/fish/${id}`)
+      .then(res => res.json())
+      .then(json => this.setState({}))
+  }
+
+  handleNewQuestion = (question) => {
+    this.setState({questionList: [question, ...this.state.questionList]}); // puts the newest question 1st in the array
+  }
+
   /*---------- Lifecycle Methods ----------*/
 
   componentDidMount() { 
     let user = userService.getUser();
+    if (user) {
+      questionService.index() 
+      .then(questionList => { // refer to line 11 in questionService.js
+        this.setState({questionList});
+      });
+    } 
     this.setState({ user }); // now 'App' holds the 'user' who logged in!!! (dev tools)
   }
 
@@ -69,6 +87,9 @@ class App extends Component {
             ?
               <>
               <NavBar user={this.state.user} />
+
+              {/* <QuestionList /> */}
+
               <Route exact path='/home' render={(props) =>  
                 this.state.user && this.state.user.isApplicant // if there's a user AND isApplicant = true
                   // componentDidMount = async > runs AFTER this ternary, so get 'cannot read prop user of null'
@@ -77,11 +98,11 @@ class App extends Component {
                 <AppHomePage
                   user={this.state.user}
                   history={props.history}
-                  questions={this.state.questions} // ????????????
+                  questionList={this.state.questionList} // ????????????
                 /> 
                 : 
                 <StudHomePage 
-                  questions={this.state.questions} // ???????????
+                  questionList={this.state.questionList} // ????????????
                 /> 
               }/>
               </>
