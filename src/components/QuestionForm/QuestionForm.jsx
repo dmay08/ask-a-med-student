@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import questionService from '../../utils/questionService';
 // import Redirect from 'react-router-dom';
 
 class QuestionForm extends Component {
@@ -13,8 +14,8 @@ class QuestionForm extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        // call the questionService.create(this.state.question)
-        // .then(question => this.props.handleNewQuestion(question))
+        questionService.create(this.state.question)
+        .then(question => this.props.handleNewQuestion(question));
     }
 
     render() {

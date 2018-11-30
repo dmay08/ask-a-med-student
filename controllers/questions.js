@@ -1,6 +1,6 @@
 var Question = require('../models/question');
 
-
+// GET questions for USER
 function index(req, res) {
     if (req.user.isApplicant) {
         Question.find({user: req.user._id})
@@ -17,7 +17,20 @@ function index(req, res) {
     }
 }
 
+function create(req, res,) {
+    var question = new Question(req.body);
+    question.user = req.user._id // assigning the object ID
+    question.save()
+    .then(question => {
+        res.json(question);
+    })
+    .catch(err => {
+        res.json({error: err})
+    });
+}
+
 
 module.exports = {
-    index
+    index,
+    create
 }

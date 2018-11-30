@@ -66,6 +66,7 @@ class App extends Component {
     if (this.state.user && this.state.user.isApplicant) {
       page = <AppHomePage
       user={this.state.user}
+      handleNewQuestion={this.handleNewQuestion}
       // history={props.history}
       questionList={this.state.questionList} // ????????????
     /> 
@@ -79,6 +80,7 @@ class App extends Component {
 
     return (
       <div className="App">
+      {this.state.user ? <NavBar user={this.state.user} /> : null}
       <Router>
         <Switch>
             <Route exact path='/' render={() =>
@@ -96,16 +98,10 @@ class App extends Component {
                 handleSignupOrLogin ={this.handleSignupOrLogin}
               />
             }/>
+            <Route exact path='/home' render={(props) => 
+              page
+            }/>
 
-            {this.state.user 
-            ?
-              <>
-              <NavBar user={this.state.user} />
-
-              {/* <Route exact path='/home' render={() =>  }/> */}
-              </>
-            :
-            null
           }
         </Switch>
       </Router>

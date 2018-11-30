@@ -1,10 +1,11 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
-
+import QuestionList from '../../../components/QuestionList/QuestionList';
 
 const StudentHome = (props) => (
-    <div className="Home">
-        <h1>Welcome, Medical Student!</h1>
+    <div className="StudHome">
+       <QuestionList 
+            questionList={props.questionList}
+        />
     </div>
 );
 

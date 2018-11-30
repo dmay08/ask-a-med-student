@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import QuestionForm from '../../../components/QuestionForm/QuestionForm';
-// import NavBar from '../../../components/NavBar/NavBar';
 import QuestionList from '../../../components/QuestionList/QuestionList';
 // import './QuestionPage.css';
 
