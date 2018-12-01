@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import QuestionForm from '../../../components/QuestionForm/QuestionForm';
 import QuestionList from '../../../components/QuestionList/QuestionList';
-// import './QuestionPage.css';
+import './AppHomePage.css';
 
 class AppHome extends Component {
     constructor(props) {
@@ -18,20 +18,22 @@ class AppHome extends Component {
     render() {
         return (
             <div className="AppHome">
-                <h1>New Question</h1>
-                <div className="">
-                    <QuestionForm 
-                        {...this.props} 
-                        updateMessage={this.updateMessage}
-                    />
-                    {/* ...this.props = ALREADY PASSING EvErYtHiNg down!!!!!! */}
-                        {/* don't have to pass 'handleSignup' down here */}
-                    <p>{this.state.message}</p>
-                    <QuestionList 
-                        {...this.props}
-                    />
+                <div className="AppHome-wrapper">
+                    <div className="QuestionForm-wrapper">
+                        <h1>New Question</h1>
+                        <QuestionForm 
+                            {...this.props} 
+                            updateMessage={this.updateMessage}
+                        />
+                    </div>
+                    <div className="QuestionList-wrapper">
+                        <p>{this.state.message}</p>
+                        <QuestionList 
+                            {...this.props}
+                        />
+                    </div>
+                </div>
             </div>
-        </div>
         );
     }
 }

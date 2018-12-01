@@ -1,0 +1,21 @@
+/* .QuestionForm  h5{
+    text-align: center;
+    width: 100%;
+    background-color: grey
+}
+
+.QuestionBox {
+    border-color: grey;
+} */
+
+.input-group {
+    min-width: 240px;
+    margin: 0 10px 0 10px;
+    
+}
+
+.question-wrapper {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 45px;
+}

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import questionService from '../../utils/questionService';
-// import Redirect from 'react-router-dom';
+import './QuestionForm.css';
 
 class QuestionForm extends Component {
     constructor(props) {
@@ -16,16 +16,25 @@ class QuestionForm extends Component {
         event.preventDefault();
         questionService.create(this.state.question)
         .then(question => this.props.handleNewQuestion(question));
+        this.setState({question: ''})
     }
 
-    render() {
+    reset = () => {
+        document.getElementById('question-input').value = '';
+    }
+
+    render() { 
         return(
-            <form onSubmit={this.handleSubmit}>
-                <label>
-                    Type your question here...
-                    <input type="text" value={this.state.question} onChange={this.handleChange} />
-                </label>
-                <input type="submit" value="Submit" />
+            <form  onSubmit={this.handleSubmit}>
+                <div className="question-wrapper">
+                    <label className="input-group">
+                        {/* <h5>Type your question below:</h5> */}
+                        <input id="question-input" className="form-control" type="text" value={this.state.question} onChange={this.handleChange} />
+                        <span className="input-group-btn">
+                            <button className="btn btn-success" type="submit" onClick={this.reset}>Submit</button>
+                        </span>
+                    </label>
+                </div>
             </form>
         );
     }

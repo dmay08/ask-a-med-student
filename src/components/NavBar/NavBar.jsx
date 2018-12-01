@@ -4,9 +4,11 @@ import './NavBar.css';
 
 const NavBar = (props) => {
     return (
-        <div className='NavBar'>
-            <span className='NavBar-welcome'>WELCOME, {props.user.name}</span>
-            <Link to='/' onClick={props.handleLogout} className='NavBar-link' >LOG OUT</Link>
+        <div className='NavBar-wrap'>
+            <div className='NavBar'>
+                <span className='NavBar-welcome'>WELCOME, {props.user.name}</span>
+                <Link to='/' onClick={props.handleLogout} className='NavBar-link' >LOG OUT</Link>
+            </div>
         </div>
     );
 }

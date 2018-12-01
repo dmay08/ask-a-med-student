@@ -1,0 +1,7 @@
+.QuestionList-scroll {
+    overflow: scroll;
+    /* border: 1px dashed grey; */
+    padding: 0 5px;
+    max-height: 100px;
+    margin: 0 5px;
+}

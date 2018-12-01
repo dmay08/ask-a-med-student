@@ -1,3 +1,10 @@
 .Welcome {
     text-align: center;
+    margin-top: 50px;
+    font-size: 16px;
+}
+
+.Welcome h1 {
+    font-size: 50px;
+    padding: 20px;
 }
