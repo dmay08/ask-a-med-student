@@ -3,7 +3,7 @@ import './QuestionList.css'
 
 const QuestionList = (props) => (
     <div className="QuestionList">
-        { (props.user.isApplicant) 
+        { (props.user) && (props.user.isApplicant) 
         ? 
         <h1>My Questions</h1>
         :
