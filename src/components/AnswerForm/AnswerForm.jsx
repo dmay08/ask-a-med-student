@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import answerService from '../../utils/answerService';
-// import './AnswerForm.css';
+import './AnswerForm.css';
 
 class AnswerForm extends Component {
     constructor(props) {

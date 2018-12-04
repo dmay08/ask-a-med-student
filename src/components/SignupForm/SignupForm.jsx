@@ -67,7 +67,7 @@ class SignupForm extends Component {
             </div>
           </div>
 
-          <select className="form-control" value={this.state.isApplicant} name="isApplicant" onChange={this.handleChange}>
+          <select className="form-control dropdown" value={this.state.isApplicant} name="isApplicant" onChange={this.handleChange}>
             <option>Choose one:</option>
             <option value={true}>Medical School Applicant</option>
             <option value={false}>Medical Student</option>

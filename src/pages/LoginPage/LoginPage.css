@@ -3,5 +3,11 @@
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    margin-bottom: 50px;
+    padding-top: 40%;
   }
+
+.header-footer {
+  font-size: 20px;
+  margin: 10px 0 10px;
+  text-align: center;
+}

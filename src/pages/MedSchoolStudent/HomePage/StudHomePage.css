@@ -20,8 +20,11 @@
     /* height: 220px; */
     padding-left: 15px;
     padding-right: 15px;
+    text-align: center;
+    font-size: 12px;
 }
 
 .Response-wrapper h1 {
     text-align: center;
 }
+
