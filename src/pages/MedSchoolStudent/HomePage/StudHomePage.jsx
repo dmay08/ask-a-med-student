@@ -16,6 +16,7 @@ class StudHome extends Component {
     handleSelectQuestion = (e, question) => {
         e.preventDefault();
         this.setState({selectedQuestion: question})
+        //
     }
 
     handleAnswerQuestion = (answerText) => {
@@ -33,7 +34,8 @@ class StudHome extends Component {
                     />
                 </div>
                 <div className="Response-wrapper">
-                    <h2>Answers:</h2>
+                    <h2>My Answer:</h2>
+                    <hr/>
                         {this.state.selectedQuestion 
                             ?
                             <div>

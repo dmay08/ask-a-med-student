@@ -6,13 +6,21 @@ const QuestionList = (props) => (
     <div className="QuestionList">
         { (props.user) && (props.user.isApplicant) 
         ? 
-        <h1>My Questions</h1>
+        <div>
+            <h2>My Questions</h2>
+            <p>(scroll to view all Q's)</p>
+            <hr/>
+        </div>
         :
-        <h1>Q's to answer:</h1>
+        <div>
+            <h2>Q's to answer:</h2>
+            <p>(scroll to view all Q's)</p>
+            <hr/>
+        </div>
     }
         <div className="QuestionList-scroll">
             {props.questionList.map((question, index) => 
-                <div onClick={(e) => props.handleSelectQuestion(e, question)} key={question._id}>{question.content}
+                <div onClick={(e) => props.handleSelectQuestion(e, question)} key={question._id}>{question.content}<hr/>
             </div>
             )}
         </div>

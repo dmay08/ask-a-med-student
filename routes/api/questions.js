@@ -5,6 +5,7 @@ var questionsCtrl = require('../../controllers/questions');
 
 /*---------- Public Routes ----------*/
 router.get('/', checkAuth, questionsCtrl.index); 
+router.get('/:id', checkAuth, questionsCtrl.getOne); 
 router.post('/', checkAuth, questionsCtrl.create);
 router.put('/:id', checkAuth, questionsCtrl.addAnswer);
     // embedded answerSchema breaks RESTFUL routing (need to change route if i want to 'edit')

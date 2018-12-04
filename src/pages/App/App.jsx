@@ -35,7 +35,6 @@ class App extends Component {
     this.setState({ user: userService.getUser() });
   }
 
-  // ????? click-handler for getting 'fish-details'
   handleClick = (id) => {
     fetch(`/api/questions/${id}`)
       .then(res => res.json())

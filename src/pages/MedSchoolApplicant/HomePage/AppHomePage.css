@@ -19,9 +19,13 @@
 }
 
 .AppHome-wrapper {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     padding-top: 20px;
+}
+
+.QuestionForm-wrapper h2 {
+    margin-bottom: 20px;
 }

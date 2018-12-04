@@ -5,9 +5,12 @@ import './WelcomePage.css';
 const Welcome = (props) => (
     <div className="Welcome">
         <h1>AMS</h1>
-        <p>Ask a Med Student</p>
+        <h3>Ask a Med Student</h3>
+        <br/>
+        <br/>
         <a href="">How it works</a>
-        <br></br>
+        <br/>
+        <br/>
         <Link to='/login' className='NavBar-link'>Log In</Link>
         &nbsp;&nbsp;|&nbsp;&nbsp;
         <Link to='/signup' className='NavBar-link'>Sign Up</Link>

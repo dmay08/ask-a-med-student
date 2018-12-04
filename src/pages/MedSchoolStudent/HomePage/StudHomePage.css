@@ -1,6 +1,5 @@
 .StudHome {
     text-align: center;
-    margin-top: 50px;
     font-size: 16px;
 }
 
@@ -17,14 +16,13 @@
     background-color: rgb(247, 247, 247);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.25), 0 6px 20px 0 rgba(0, 0, 0, 0.25);
     border-radius: 8px;
-    /* height: 220px; */
     padding-left: 15px;
     padding-right: 15px;
     text-align: center;
     font-size: 12px;
 }
 
-.Response-wrapper h1 {
+/* .Response-wrapper h1 {
     text-align: center;
-}
+} */
 

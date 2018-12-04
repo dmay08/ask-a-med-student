@@ -24,8 +24,7 @@ class AnswerForm extends Component {
         return(
             <form  onSubmit={this.handleSubmit}>
                 <div className="answer-wrapper">
-                    <label className="input-group">
-                        {/* <h5>Type your answer below:</h5> */}
+                    <label className="input-group answer-input-wrap">
                         <input id="answer-input" className="form-control" type="text" value={this.state.answer} onChange={this.handleChange} />
                         <span className="input-group-btn">
                             <button className="btn btn-success" type="submit">Submit</button>

@@ -9,7 +9,7 @@ function index(req, res) {
             res.json(questions);
         });
     } else {
-        Question.find({answers: {$size: 0}}) // finds all questions that have 0 answers 
+        Question.find({}) // finds all questions that have 0 answers 
         .sort({createdAt: 1}) // first answer = first (ascending) = 1
         .then(questions => {
             res.json(questions);
@@ -37,15 +37,14 @@ async function addAnswer(req, res) { // async = instead of using '.then'
     res.json(response)
 }
 
-
-// // ??????? - NEWLY WRITTEN
-// function getQ(req, res) {
-//     Question.findById(req.params.id) 
-//         .then(question => {res.json(question)})
-// }
+function getOne(req, res) {
+    Question.findById(req.params.id) 
+        .then(question => {res.json(question)})
+}
 
 module.exports = {
     index,
+    getOne,
     create,
     addAnswer
 }

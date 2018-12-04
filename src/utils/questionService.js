@@ -20,7 +20,7 @@ function create(question) {
     .then(questionList => questionList)
 }
 
-function getQ(id) {
+function getOne(id) {
     return fetch(BASE_URL + id, getAuthRequestOptions('GET')) // base_url = where we get our questions from
     .then(res => {
         if (res.ok) return res.json(); // if all is good > go to the next line?
@@ -48,5 +48,5 @@ function getAuthRequestOptions(method, body) {
 export default {
     index,
     create, 
-    getQ
+    getOne
 };

@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import QuestionForm from '../../../components/QuestionForm/QuestionForm';
 import QuestionList from '../../../components/QuestionList/QuestionList';
 import QuestionDetail from '../../../components/QuestionDetail/QuestionDetail';
+import questionService from '../../../utils/questionService';
 import './AppHomePage.css';
 
 class AppHome extends Component {
@@ -19,7 +20,8 @@ class AppHome extends Component {
 
     handleSelectQuestion = (e, question) => {
         e.preventDefault();
-        this.setState({selectedQuestion: question})
+        questionService.getOne(question._id)
+        .then(question => this.setState({selectedQuestion: question}));
     }
     
     render() {
@@ -28,7 +30,7 @@ class AppHome extends Component {
             <div className="AppHome">
                 <div className="AppHome-wrapper">
                     <div className="QuestionForm-wrapper">
-                        <h1>New Question</h1>
+                        <h2>New Question</h2>
                         <QuestionForm 
                             {...this.props} 
                             updateMessage={this.updateMessage}
@@ -44,6 +46,7 @@ class AppHome extends Component {
                     </div>
                     <div className="Response-wrapper">
                         <h2>Answers:</h2>
+                        <hr/>
                             {this.state.selectedQuestion 
                                 ?
                                 <QuestionDetail 
