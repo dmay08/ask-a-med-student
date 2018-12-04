@@ -1,13 +1,56 @@
-import React from 'react';
+import React, {Component} from 'react';
 import QuestionList from '../../../components/QuestionList/QuestionList';
+import QuestionDetail from '../../../components/QuestionDetail/QuestionDetail';
+import AnswerForm from '../../../components/AnswerForm/AnswerForm';
 import './StudHomePage.css'
 
-const StudentHome = (props) => (
-    <div className="StudHome">
-       <QuestionList 
-            questionList={props.questionList}
-        />
-    </div>
-);
+class StudHome extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            selectedQuestion: null,
+            answerText: ''
+        }
+    }
 
-export default StudentHome;
+    handleSelectQuestion = (e, question) => {
+        e.preventDefault();
+        this.setState({selectedQuestion: question})
+    }
+
+    handleAnswerQuestion = (answerText) => {
+        this.setState({answerText})
+    }
+    
+    render() {
+        return (
+            <div className="StudHome-wrapper">
+                <div className="StudHome">
+                    <QuestionList 
+                        questionList={this.props.questionList}
+                        handleSelectQuestion={this.handleSelectQuestion}
+                        // question={props.selectedQuestion}
+                    />
+                </div>
+                <div className="Response-wrapper">
+                    <h2>Answers:</h2>
+                        {this.state.selectedQuestion 
+                            ?
+                            <div>
+                                <QuestionDetail 
+                                    question={this.state.selectedQuestion}
+                                />
+                                {this.state.answerText}
+                                <AnswerForm 
+                                    // pass in 'handle' as 'on__' for React
+                                    onAnswerQuestion={this.handleAnswerQuestion}/>
+                            </div>
+                            :
+                            <p>Click a Q above to view Answers!</p>
+                        } 
+                </div>
+            </div>  
+        );
+        }
+    }
+export default StudHome;

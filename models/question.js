@@ -19,3 +19,4 @@ const questionSchema = new Schema({
 });
 
 module.exports = mongoose.model('Question', questionSchema);
+// don't export answerSchema (it's only being embedded - line 16)

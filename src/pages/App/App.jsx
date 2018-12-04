@@ -25,22 +25,21 @@ class App extends Component {
     }
   }
 
-  // 6) Implement Log Out functionality ('onClick' w/ this func = 'NavBar.jsx' page)
   handleLogout = () => { // go to 'userService' & write 'logout' func
     userService.logout();
     this.setState({ user: null });
   }
 
-  // 7) Update the user in <App>'s state when signing up.
+  // Update the user in <App>'s state when signing up.
   handleSignupOrLogin = () => {
     this.setState({ user: userService.getUser() });
   }
 
-  // is this correct ?????? i don't want 'details'.... 
+  // ????? click-handler for getting 'fish-details'
   handleClick = (id) => {
-    fetch(`/api/fish/${id}`)
+    fetch(`/api/questions/${id}`)
       .then(res => res.json())
-      .then(json => this.setState({}))
+      .then(json => this.setState({oneQuestion: json}))
   }
 
   handleNewQuestion = (question) => {
@@ -72,8 +71,9 @@ class App extends Component {
     /> 
     } else if (this.state.user && !this.state.user.isApplicant) {
       page = <StudHomePage 
-      user={this.state.user} // ????????????
-      questionList={this.state.questionList} 
+      user={this.state.user} 
+      questionList={this.state.questionList}
+      handleSelectQuestion={this.handleSelectQuestion}
     /> 
     } else if (!this.state.user) {
       page = <WelcomePage />

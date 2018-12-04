@@ -1,6 +1,6 @@
-var Question = require('../models/question');
+var Answer = require('../models/answer');
 
-// GET questions for USER
+// GET answer for USER
 function index(req, res) {
     if (req.user.isApplicant) {
         Question.find({user: req.user._id})

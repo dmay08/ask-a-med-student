@@ -1,14 +1,11 @@
 var express = require('express');
 var router = express.Router();
-// var User = require('../../models/user');
-var questionsCtrl = require('../../controllers/questions');
+var answersCtrl = require('../../controllers/answers');
 
 /*---------- Public Routes ----------*/
-router.get('/', checkAuth, questionsCtrl.index); 
-router.post('/', checkAuth, questionsCtrl.create);
-
-
-// router.get('/:id', checkAuth, questionsCtrl.getQ) // Jim said to delete this ctrl function
+// router.get('/', checkAuth, answersCtrl.index); 
+// router.post('/', checkAuth, answersCtrl.create);
+// router.get('/:id', checkAuth, answersCtrl.getAnswer); 
 
 
 

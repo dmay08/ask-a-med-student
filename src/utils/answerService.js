@@ -1,6 +1,6 @@
 import tokenService from './tokenService';
 
-const BASE_URL = '/api/questions/'
+const BASE_URL = '/api/answers/'
 
 function index() {
     return fetch(BASE_URL, getAuthRequestOptions('GET')) // base_url = where we get our questions from
@@ -8,25 +8,26 @@ function index() {
         if (res.ok) return res.json(); // if all is good > go to the next line?
         throw new Error('Authorization Required'); // if token is invalid
     })
-    .then(questionList => questionList);
+    .then(answerList => answerList);
 }
 
-function create(question) {
-    return fetch(BASE_URL, getAuthRequestOptions('POST', {content: question}))
+function create(answer) {
+    return fetch(BASE_URL, getAuthRequestOptions('POST', {content: answer}))
     .then(res => {
+        console.log(res);
         if (res.ok) return res.json();
-        throw new Error('New Question failed');
+        throw new Error('New Answer failed');
     })
-    .then(questionList => questionList)
+    .then(answerList => answerList)
 }
 
-function getQ(id) {
+function getAnswer(id) {
     return fetch(BASE_URL + id, getAuthRequestOptions('GET')) // base_url = where we get our questions from
     .then(res => {
         if (res.ok) return res.json(); // if all is good > go to the next line?
         throw new Error('Authorization Required'); // if token is invalid
     })
-    .then(question => question);
+    .then(answer => answer);
 }
 
 /* -------------- Helper Functions ---------------*/
@@ -48,5 +49,5 @@ function getAuthRequestOptions(method, body) {
 export default {
     index,
     create, 
-    getQ
+    getAnswer
 };
