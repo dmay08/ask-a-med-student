@@ -23,6 +23,7 @@ class AppHome extends Component {
     }
     
     render() {
+        console.log(this.state.selectedQuestion)
         return (
             <div className="AppHome">
                 <div className="AppHome-wrapper">

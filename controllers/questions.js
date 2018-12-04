@@ -29,6 +29,15 @@ function create(req, res) {
     });
 }
 
+// ASYNC! (more concise than '.then')
+async function addAnswer(req, res) { // async = instead of using '.then'
+    var question = await Question.findById(req.params.id); // AWAIT = same as '.then'
+    question.answers.push(req.body);
+    var response = await question.save();
+    res.json(response)
+}
+
+
 // // ??????? - NEWLY WRITTEN
 // function getQ(req, res) {
 //     Question.findById(req.params.id) 
@@ -37,5 +46,6 @@ function create(req, res) {
 
 module.exports = {
     index,
-    create
+    create,
+    addAnswer
 }

@@ -12,14 +12,15 @@ class AnswerForm extends Component {
         this.setState({answer: event.target.value});
     }
 
-    handleSubmit = (event) => {
+    handleSubmit = async (event) => {
         event.preventDefault();
-        answerService.create(this.state.answer)
-        .then(answer => this.props.onAnswerQuestion(answer)); // matches 'handleAnswerQuestion'
+        var question = await answerService.create(this.state.answer, this.props.question._id)
+        this.props.onAnswerQuestion(this.state.answer); // matches 'handleAnswerQuestion'
         this.setState({answer: ''})
     }
 
     render() { 
+        // console.log(this.props.question)
         return(
             <form  onSubmit={this.handleSubmit}>
                 <div className="answer-wrapper">

@@ -1,6 +1,6 @@
 import tokenService from './tokenService';
 
-const BASE_URL = '/api/answers/'
+const BASE_URL = '/api/questions/'
 
 function index() {
     return fetch(BASE_URL, getAuthRequestOptions('GET')) // base_url = where we get our questions from
@@ -11,14 +11,15 @@ function index() {
     .then(answerList => answerList);
 }
 
-function create(answer) {
-    return fetch(BASE_URL, getAuthRequestOptions('POST', {content: answer}))
+function create(answer, id) {
+    console.log(id)
+    return fetch(BASE_URL + id, getAuthRequestOptions('PUT', {content: answer}))
     .then(res => {
-        console.log(res);
+        // console.log(res);
         if (res.ok) return res.json();
         throw new Error('New Answer failed');
     })
-    .then(answerList => answerList)
+    .then(question => question)
 }
 
 function getAnswer(id) {

@@ -42,7 +42,7 @@ class StudHome extends Component {
                                 />
                                 {this.state.answerText}
                                 <AnswerForm 
-                                    // pass in 'handle' as 'on__' for React
+                                    question={this.state.selectedQuestion}
                                     onAnswerQuestion={this.handleAnswerQuestion}/>
                             </div>
                             :
