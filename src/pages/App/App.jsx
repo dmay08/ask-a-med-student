@@ -33,6 +33,10 @@ class App extends Component {
   // Update the user in <App>'s state when signing up.
   handleSignupOrLogin = () => {
     this.setState({ user: userService.getUser() });
+    questionService.index() 
+      .then(questionList => { // refer to line 11 in questionService.js
+        this.setState({questionList});
+      });
   }
 
   handleClick = (id) => {
