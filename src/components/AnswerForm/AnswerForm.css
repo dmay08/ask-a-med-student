@@ -1,3 +1,7 @@
 .answer-input-wrap {
     padding: 10px 0 30px;
 }
+
+.answer-input {
+    min-width: 150px;
+}

@@ -20,9 +20,11 @@
     padding-right: 15px;
     text-align: center;
     font-size: 12px;
+    min-width: 280px;
 }
 
-/* .Response-wrapper h1 {
-    text-align: center;
-} */
+.starter-text {
+    margin: 25px 0 25px;
+    font-size: 13px;
+}
 

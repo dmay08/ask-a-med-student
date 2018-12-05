@@ -13,7 +13,26 @@ code {
     monospace;
 }
 
+button:focus, .btn:focus {
+  outline: none;
+}
+
 
 hr {
   margin: 5px;
+}
+
+
+.btn-dark{
+  min-width: 100px;
+  background-color: black;
+  color: white;
+  border-radius: 1px;
+  text-decoration: none;  
+
+}
+
+.btn:hover {
+color: #fff !important;
+text-decoration: none;
 }

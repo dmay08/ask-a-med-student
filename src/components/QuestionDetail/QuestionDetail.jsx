@@ -4,9 +4,9 @@ import './QuestionDetail.css';
 
 const QuestionDetail = (props) => (
     <div className="QuestionDetail">
-        <h5>Q: {props.question.content}</h5>
+        <h4>Q: {props.question.content}</h4>
         <hr/>
-        {props.question.answers.map(a => <div>A: {a.content}</div>)} {/* refactor to an Answer component */}
+        {props.question.answers.map(a => <div className="app-answers">A: {a.content}</div>)} {/* refactor to an Answer component */}
     </div>
 );
 

@@ -34,7 +34,7 @@ class StudHome extends Component {
                     />
                 </div>
                 <div className="Response-wrapper">
-                    <h2>My Answer:</h2>
+                    <h3>My Answer:</h3>
                     <hr/>
                         {this.state.selectedQuestion 
                             ?
@@ -48,7 +48,7 @@ class StudHome extends Component {
                                     onAnswerQuestion={this.handleAnswerQuestion}/>
                             </div>
                             :
-                            <p>Click a Q above to view Answers!</p>
+                            <p className="starter-text">Click a Q above to view Answers!</p>
                         } 
                 </div>
             </div>  

@@ -14,23 +14,23 @@ function signup(user) {
     if (res.ok) return res.json();
     throw new Error('Email already taken!');
   })
-  // "3) Persist the token (JWT) on the client."
+  // "Persist the token (JWT) on the client."
   .then(({ token }) => { // destructured
     tokenService.setToken(token); // now LOCAL STORAGE gets a kvp token (dev tools)
   }); 
 }
 
-// added BELOW v (entire function)
+
 function getUser() {
   return tokenService.getUserFromToken(); // now need to write 'getUser...' func (in 'tokenService')
 }
 
-// helps implement LOG OUT functionality (handleLogout = app.jsx)
+// handleLogout = app.jsx
 function logout() {
   tokenService.removeToken();
 }
 
-// helps implement LOGIN functionality
+
 function login(creds) {
   return fetch(BASE_URL + 'login', {
     method: 'POST',
@@ -42,7 +42,7 @@ function login(creds) {
     if (res.ok) return res.json();
     throw new Error('Bad credentials');
   })
-  .then(({ token }) => { // destructured
+  .then(({ token }) => {
     tokenService.setToken(token); // now LOCAL STORAGE gets a kvp token (dev tools)
   }); 
 }

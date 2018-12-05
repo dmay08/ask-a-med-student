@@ -6,8 +6,9 @@ const NavBar = (props) => {
     return (
         <div className='NavBar-wrap'>
             <div className='NavBar'>
-                <span className='NavBar-welcome'>WELCOME, {props.user.name}</span>
-                <Link to='/' onClick={props.handleLogout} className='NavBar-link' >LOG OUT</Link>
+                <span className='NavBar-welcome'>{props.user.name}</span>
+                <h4>AMS</h4>
+                <Link to='/' onClick={props.handleLogout} className='NavBar-link' >Log Out</Link>
             </div>
         </div>
     );

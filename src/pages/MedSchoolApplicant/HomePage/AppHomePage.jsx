@@ -30,7 +30,7 @@ class AppHome extends Component {
             <div className="AppHome">
                 <div className="AppHome-wrapper">
                     <div className="QuestionForm-wrapper">
-                        <h2>New Question</h2>
+                        <h3>New Question</h3>
                         <QuestionForm 
                             {...this.props} 
                             updateMessage={this.updateMessage}
@@ -45,7 +45,7 @@ class AppHome extends Component {
                         />
                     </div>
                     <div className="Response-wrapper">
-                        <h2>Answers:</h2>
+                        <h3>Answers:</h3>
                         <hr/>
                             {this.state.selectedQuestion 
                                 ?
@@ -53,7 +53,7 @@ class AppHome extends Component {
                                     question={this.state.selectedQuestion}
                                 />
                                 :
-                                <p>Click a Q above to view Answers!</p>
+                                <p className="starter-text">Click a Q above to view Answers!</p>
                             } 
                     </div>
                 </div>

@@ -1,9 +1,9 @@
-import React from 'react';
+// import React from 'react';
 
-const Answer = (props) => (
-    <div>
-        {/* (props.answer)  */}
-    </div>
-)
+// const Answer = (props) => (
+//     <div>
+//         {/* (props.answer)  */}
+//     </div>
+// )
 
-export default Answer;
+// export default Answer;

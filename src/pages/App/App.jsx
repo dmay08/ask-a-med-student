@@ -5,14 +5,14 @@ import {
   Route,
   // Redirect
 } from 'react-router-dom';
-import './App.css';
 import WelcomePage from '../WelcomePage/WelcomePage';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import AppHomePage from '../MedSchoolApplicant/HomePage/AppHomePage';
 import StudHomePage from '../MedSchoolStudent/HomePage/StudHomePage';
 import NavBar from '../../components/NavBar/NavBar';
-
+import HowItWorks from '../../pages/HowItWorks/HowItWorks';
+import './App.css';
 import userService from '../../utils/userService';
 import questionService from '../../utils/questionService';
 
@@ -107,7 +107,9 @@ class App extends Component {
             <Route exact path='/home' render={(props) => 
               page
             }/>
-
+            <Route exact path='/howitworks' render={() =>
+              <HowItWorks/>
+            } />
           }
         </Switch>
       </Router>

@@ -1,17 +1,15 @@
 .NavBar {
     display: flex;
     justify-content: space-between;
-    padding: 10px 20px;
+    padding: 10px 15px;
     height: 40px;
     background-image: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
 }
-  
-.NavBar-link {
-    margin: 0 10px;
-}
+
 
 .NavBar-welcome {
     color: black;
+    font-size: 14px
 }
 
 .NavBar-wrap {
@@ -19,5 +17,10 @@
 }
 
 .NavBar-link {
-    color: rgb(50, 50, 50)
+    color: rgb(50, 50, 50);
+    font-size: 14px;
+}
+
+.NavBar-wrap h4 {
+    margin-top: 2px;
 }

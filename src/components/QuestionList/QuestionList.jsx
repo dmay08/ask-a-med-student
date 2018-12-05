@@ -7,13 +7,13 @@ const QuestionList = (props) => (
         { (props.user) && (props.user.isApplicant) 
         ? 
         <div>
-            <h2>My Questions</h2>
+            <h3>My Questions</h3>
             <p>(scroll to view all Q's)</p>
             <hr/>
         </div>
         :
         <div>
-            <h2>Q's to answer:</h2>
+            <h3>Q's to answer:</h3>
             <p>(scroll to view all Q's)</p>
             <hr/>
         </div>

@@ -8,7 +8,7 @@ const Welcome = (props) => (
         <h3>Ask a Med Student</h3>
         <br/>
         <br/>
-        <a href="">How it works</a>
+        <Link to="/howitworks">How it works</Link>
         <br/>
         <br/>
         <Link to='/login' className='NavBar-link'>Log In</Link>
