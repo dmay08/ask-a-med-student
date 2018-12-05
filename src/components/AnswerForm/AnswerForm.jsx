@@ -27,7 +27,7 @@ class AnswerForm extends Component {
                     <label className="input-group answer-input-wrap">
                         <input id="answer-input" className="form-control" type="text" value={this.state.answer} onChange={this.handleChange} />
                         <span className="input-group-btn">
-                            <button className="btn btn-success" type="submit">Submit</button>
+                            <button id="button" className="btn btn-success" type="submit">Submit</button>
                         </span>
                     </label>
                 </div>
