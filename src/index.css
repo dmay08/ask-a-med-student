@@ -32,7 +32,12 @@ hr {
 
 }
 
-.btn:hover {
-color: #fff !important;
-text-decoration: none;
+.btn:active, .btn:focus {
+  outline: none;
 }
+
+
+#button:hover, #button:focus {
+  background-color: rgb(134, 187, 245)
+}
+

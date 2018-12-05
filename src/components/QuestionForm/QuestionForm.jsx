@@ -27,7 +27,7 @@ class QuestionForm extends Component {
                         {/* <h5>Type your question below:</h5> */}
                         <input id="question-input" className="form-control" type="text" value={this.state.question} onChange={this.handleChange} />
                         <span className="input-group-btn">
-                            <button className="btn btn-success" type="submit">Submit</button>
+                            <button id="button" className="btn btn-success" type="submit">Submit</button>
                         </span>
                     </label>
                 </div>
