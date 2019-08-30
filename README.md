@@ -3,10 +3,10 @@
 ## Introduction
 - Ask a Med Student: An online platform designed to connect students interested in medical school with current medical students. Users can submit questions and medical students can respond to those questions for the submitters to see.
 
-<img src="./public/images/1.png" height="500" width="200">
-<img src="./public/images/2.png" height="500" width="200">
-<img src="./public/images/3.png" height="500" width="200">
-<img src="./public/images/4.png" height="500" width="200">
+<img src="./public/images/1.png" height="400" width="200">
+<img src="./public/images/2.png" height="400" width="200">
+<img src="./public/images/3.png" height="400" width="200">
+<img src="./public/images/4.png" height="400" width="200">
 
 ## Technologies Used 
 - HTML5
